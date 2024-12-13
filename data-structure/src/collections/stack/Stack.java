@@ -1,4 +1,4 @@
-package collections;
+package collections.stack;
 
 import java.util.NoSuchElementException;
 
