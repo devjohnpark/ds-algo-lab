@@ -1,4 +1,4 @@
-package example;
+package collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,24 +6,15 @@ import org.junit.jupiter.api.Test;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/* 5. Prove your data structure functions correctly.
-Test scenario
-1) stack instance initialization test. then check if the stack is empty.
-2) get the data of top node when stack is empty. then check if it throws an exception.
-3) input node then get the data of top node. then check if the input node's data matches the top node's data.
-4) input node then remove the data of the top node. then check if the stack is empty.
-5) input two nodes then get the data of the top node. then check if the top node was updated to the new node.
-6) input two nodes then remove the data of the top node. then check if the top node was updated to old top node.
- */
-class StackTest {
-    private Stack stack;
+public class StackTest {
+    private Stack<Integer> stack;
 
     @BeforeEach
     void setUp() {
-        stack = new Stack();
+        stack = new Stack<>();
     }
-
     // Let's express the test case as given, when, then.
 
     /* 1)
