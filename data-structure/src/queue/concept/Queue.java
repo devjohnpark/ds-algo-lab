@@ -1,6 +1,4 @@
-package queue;
-
-import java.util.NoSuchElementException;
+package queue.concept;
 
 public class Queue {
 
@@ -32,7 +30,7 @@ public class Queue {
     // We need to get a data of the first node. so I'm gonna a make method return the data of the first node.
     public int peek() {
         if (head == null){ // it can't access data when head is null, so let's throw the exception.
-            throw new NoSuchElementException("Queue is empty");
+            throw new RuntimeException("Queue is empty");
         }
         return head.data;
     }

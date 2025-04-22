@@ -1,4 +1,4 @@
-package stack.usecase;
+package stack.ps;
 
 import java.util.Stack;
 
@@ -15,8 +15,6 @@ public class ValidBalancedParentheses2 {
                 if (stack.isEmpty() || !isPairParentheses(stack.pop(), c)) {
                     return false;
                 }
-            } else {
-                return false;
             }
         }
         return stack.isEmpty();
@@ -53,8 +51,6 @@ public class ValidBalancedParentheses2 {
         System.out.println(isBalanced("{")); // false
         System.out.println(isBalanced("}")); // false
         System.out.println(isBalanced("{()[]()()}")); // true
-        System.out.println(isBalanced("{()a[]()()}")); // false
-        System.out.println(isBalanced("{()[a]()()}")); // false
         System.out.println(isBalanced("{()[]()()")); // false
         System.out.println(isBalanced("()[]()()}")); // false
         System.out.println(isBalanced("{()[](]()}")); // false

@@ -1,5 +1,6 @@
 package stack.concept;
 
+import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 public class Stack {
@@ -27,8 +28,8 @@ public class Stack {
 
     // We need to get data of the first node. so I'm gonna a make method return the data of the first node.
     public int peek() {
-        if (top == null){ // it can't access data when head is null, so let's throw t he exception.
-            throw new NoSuchElementException("Stack is empty");
+        if (isEmpty()){ // it can't access data when head is null, so let's throw t he exception.
+            throw new EmptyStackException();
         }
         return top.data;
     }
