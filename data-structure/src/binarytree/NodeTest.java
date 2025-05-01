@@ -62,4 +62,22 @@ public class NodeTest {
         // 원래 출력 복원
         System.setOut(System.out);
     }
+
+
+
+    @Test
+    public void testCheckBinarySearchTree() {
+        Node root = new Node(10);
+        root.insert(5);g
+        root.insert(15);
+        root.insert(3);
+        root.insert(7);
+        root.insert(18);
+
+        assertTrue(root.checkBinarySearchTree(root));
+        assertTrue(root.checkBinarySearchTree(null));
+        assertFalse(root.checkBinarySearchTree(root, 13, 30));
+        assertFalse(root.checkBinarySearchTree(root, 1, 5));
+        assertTrue(root.checkBinarySearchTree(root, 3, 18));
+    }
 }
