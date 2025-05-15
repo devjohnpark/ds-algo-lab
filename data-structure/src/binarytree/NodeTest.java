@@ -68,7 +68,7 @@ public class NodeTest {
     @Test
     public void testCheckBinarySearchTree() {
         Node root = new Node(10);
-        root.insert(5);g
+        root.insert(5);
         root.insert(15);
         root.insert(3);
         root.insert(7);
