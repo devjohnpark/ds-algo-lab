@@ -6,6 +6,7 @@ import java.util.Stack;
 
 // Adjacency List: 연결리스트로 그래프를 표현 (DirectedGraph와 UndirectedGraphWithDfsBfs 중에서 UndirectedGraphWithDfsBfs 표현)
 public class UndirectedGraphWithDfsBfs {
+    // 각 Node에 인접한 노드들이 연결된 연결리스트가 저장하도록하여, 특정 노드로 이동시 인접한 모든 노드를 팀색할수있다.
     class Node {
         private final int data; // 노드의 데이터
         private final LinkedList<Node> adjacent; // 인접한 노드들을 알기 위한 연결리스트
@@ -55,7 +56,9 @@ public class UndirectedGraphWithDfsBfs {
             root = stack.pop();
 
             // 2. 인접한 노드중에서 스택에 추가되지 않았던 노드만 추가한다.
-            for (Node node: root.adjacent) {
+            for (Node node: root.adjacent) { // 해당 노드와 인접한 노드를 자식 노드 끝까지 순차대로 탐색하기 위해서 스택을 사용한다. 그래야 끝까지 상위 노드로 올라가가 때문이다.
+                // 각 Node에 인접한 노드들이 연결된 연결리스트가 저장하도록하여, 특정 노드로 이동시 인접한 모든 노드를 팀색할수있다.
+                // 따라서 한번 스택에 추가한 노드를 제외시켜야한다.
                 if (!node.marked) {
                     node.marked = true;
                     stack.push(node);
